@@ -5,15 +5,7 @@
 (() => {
 
     //----------------------------------------------------------------
-    /*Current version.*/
-    _.VERSION = '0.0.1';
-    //----------------------------------------------------------------
-
     /*Create Array methods.*/
-    const hasOwnProperty = ObjProto.hasOwnProperty,
-        push = ArrayProto.push,
-        slice = ArrayProto.slice,
-        toString = ObjProto.toString;
 
     const ArrayProto = Array.prototype,
         ObjProto = Object.prototype,
@@ -22,6 +14,12 @@
     const isNativeArray = Array.isArray,
         nativeCreate = Object.create,
         nativeKeys = Object.keys;
+
+    const hasOwnProperty = ObjProto.hasOwnProperty,
+        push = ArrayProto.push,
+        slice = ArrayProto.slice,
+        toString = ObjProto.toString;
+
     //----------------------------------------------------------------
 
     /*Create the >>Rocket>> reference object for use below.*/
@@ -30,6 +28,9 @@
         if (!(this instanceof _)) return new _(obj);
         this._wrapped = obj;
     };
+    //----------------------------------------------------------------
+    /*Current version.*/
+    _.VERSION = '0.0.1';
     //----------------------------------------------------------------
 
     /*Initial Setup.*/
@@ -51,7 +52,5 @@
         exports._ = _;
     } else root._ = _;
     //----------------------------------------------------------------
-
-
 
 })();
